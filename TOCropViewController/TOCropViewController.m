@@ -87,7 +87,8 @@
         
         _aspectRatioPreset = TOCropViewControllerAspectRatioPresetOriginal;
         _toolbarPosition = TOCropViewControllerToolbarPositionBottom;
-        _rotateClockwiseButtonHidden = YES;
+        _rotateClockwiseButtonHidden = NO;
+        [self setRotateButtonsHidden:NO];
     }
     
     return self;
@@ -231,20 +232,21 @@
         frame.size.height = CGRectGetHeight(self.view.frame);
     }
     else {
+        CGFloat toolbarHeight = 100.0;
         frame.origin.x = 0.0f;
         
         if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
-            frame.origin.y = CGRectGetHeight(self.view.bounds) - 44.0f;
+            frame.origin.y = CGRectGetHeight(self.view.bounds) - toolbarHeight;
         } else {
             frame.origin.y = 0;
         }
         
         frame.size.width = CGRectGetWidth(self.view.bounds);
-        frame.size.height = 44.0f;
+        frame.size.height = toolbarHeight;
         
         // If the bar is at the top of the screen and the status bar is visible, account for the status bar height
         if (self.toolbarPosition == TOCropViewControllerToolbarPositionTop && self.prefersStatusBarHidden == NO) {
-            frame.size.height = 64.0f;
+            frame.size.height = 20.0 + toolbarHeight;
         }
     }
     
