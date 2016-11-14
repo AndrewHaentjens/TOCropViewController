@@ -142,7 +142,7 @@
     [_rotateCounterclockwiseButton.layer setBorderWidth:1.0];
     [_rotateCounterclockwiseButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
     [_rotateCounterclockwiseButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [_rotateCounterclockwiseButton setImage:[TOCropToolbar rotateCCWImage] forState:UIControlStateNormal];
+    [_rotateCounterclockwiseButton setImage:[UIImage imageNamed:@"rotate_left"] forState:UIControlStateNormal];
     [_rotateCounterclockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     _rotateCounterclockwiseButton.imageEdgeInsets = UIEdgeInsetsMake(0.0f, -42.0f, 0.0f, 0.0f);
     [self addSubview:_rotateCounterclockwiseButton];
@@ -158,7 +158,7 @@
     [_rotateClockwiseButton.layer setMasksToBounds:YES];
     [_rotateClockwiseButton.layer setBorderWidth:1.0];
     [_rotateClockwiseButton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [_rotateClockwiseButton setImage:[TOCropToolbar rotateCWImage] forState:UIControlStateNormal];
+    [_rotateClockwiseButton setImage:[UIImage imageNamed:@"rotate_right"] forState:UIControlStateNormal];
     [_rotateClockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     _rotateClockwiseButton.imageEdgeInsets = UIEdgeInsetsMake(0.0f, -42.0f, 0.0f, 0.0f);
     [self addSubview:_rotateClockwiseButton];
